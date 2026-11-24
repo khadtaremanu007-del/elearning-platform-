@@ -69,3 +69,9 @@ jobs:
         run: |
           kubectl rollout status deployment/elearning-app \
             -n elearning --timeout=180s
+        
+      - name: Check GitHub OIDC context
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch: $GITHUB_REF"
+          echo "Event: $GITHUB_EVENT_NAME"
